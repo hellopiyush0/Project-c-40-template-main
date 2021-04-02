@@ -54,4 +54,24 @@ class Player {
 
     }
 
+    getScore(){
+
+        database.ref("score").on("value",(data)=>{
+
+            this.score = data.val();
+      
+        })
+      
+    }
+
+    static updateScore(){
+
+        database.ref('/').update({
+    
+          score: score
+    
+        });
+    
+    }
+
 }
